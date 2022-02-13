@@ -35,4 +35,5 @@ For all the automated cases, you can find the detailed Test cases and scenarios 
  - Util >> Kept the logic to read properties file
  - Warpper class >> We write the wrapper method which we used
  - Resources >> Applicatio Properties amd driver.exe , TestNG.xml
+ - Reports are generate in the Test-Output folder
  
