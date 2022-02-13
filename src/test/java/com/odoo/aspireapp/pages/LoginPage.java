@@ -1,6 +1,7 @@
 package com.odoo.aspireapp.pages;
 
 import com.odoo.aspireapp.base.BaseTest;
+import com.odoo.aspireapp.wrapper.Wrappers;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,18 +9,18 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends BaseTest {
 
     @FindBy(xpath = "//input[@name='login']")
-    private WebElement email;
+    public WebElement email;
 
     @FindBy(xpath = "//input[@name='password']")
-    private WebElement pwd;
+    public WebElement pwd;
 
     @FindBy(xpath = "//*[contains(text(),'Log in')]")
-    private WebElement login;
+    public WebElement login;
 
     public void login(String userName, String password) {
         PageFactory.initElements(driver, this);
-        email.sendKeys(userName);
-        pwd.sendKeys(password);
-        login.click();
+        Wrappers.sendKeys(driver ,email ,userName);
+        Wrappers.sendKeys(driver ,pwd , password);
+        Wrappers.clickOn(driver ,login);
     }
 }
